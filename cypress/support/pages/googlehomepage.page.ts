@@ -12,7 +12,20 @@ class GoogleHomepagePage {
 
     enterKeyword(keyword:string) {
         cy.get(googleHomepageIds.searchfield).type(keyword);
-    } 
+    }
+
+    checkcookiespopup() {
+        cy.get(googleHomepageIds.pagebody)
+            .then($body => {
+                if ($body.find(googleHomepageIds.cookiesacceptbutton).length) {
+                    return googleHomepageIds.cookiesacceptbutton;
+                }
+                return googleHomepageIds.searchfield;
+            })
+            .then(selector => {
+            cy.get(selector).click();
+        });
+    }
 
 }
 

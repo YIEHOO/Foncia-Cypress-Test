@@ -25,6 +25,7 @@ testData.forEach((testDataRow: any) => {
   });
 
   Then("I should see a search bar and a search button", () => {
+    googleHomepage.checkcookiespopup();
     googleHomepage.searchbar
       .should('be.visible')
       .should('have.class','gLFyf gsfi');
