@@ -51,7 +51,7 @@ To run the test on production on a headless mode :
 yarn test --env ENV='production'
 ```
 
-#### Additional commands not needed to be run but might be help
+#### Additional commands not needed to be run but might be helpful
 
 To merge mochawesome reports
 ```sh
