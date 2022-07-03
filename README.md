@@ -45,7 +45,7 @@ yarn install
 
 #### Run the tests
 
-To run the test on production :
+To run the test on production on a headless mode :
 
 ```sh
 yarn test --env ENV='production'
