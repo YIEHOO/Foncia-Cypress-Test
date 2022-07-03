@@ -13,7 +13,7 @@ def getBuildUser() {
 pipeline {
     
     agent any
-    tools {nodejs "nodejs"}
+    tools {nodejs '18.4.0'}
 
     environment {
         BUILD_USER = ''
