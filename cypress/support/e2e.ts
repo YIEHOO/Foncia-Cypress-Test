@@ -21,3 +21,10 @@ import './commands';
 
 // This import will allow to add xpath as a locator to cypress library
 import 'cypress-xpath';
+declare global {
+    namespace Cypress {
+      interface Chainable {
+        search(property: string, type: string, price: string, city: string): Chainable<Element>
+      }
+    }
+}

@@ -6,11 +6,11 @@
   "license": "MIT",
   "scripts": {
     "//pretest" : "echo 'It will be run before test and will remove reports, screenshots, videos, and generate .json fixtures'",
-    "pretest": "rimraf -r ./cypress/reports/* && rimraf -r ./cypress/screenshots/* && rimraf -r ./cypress/videos/* && yarn run convertCSVtoJSON",
+    "pretest": "yarn run //pretest && rimraf -r ./cypress/reports/* && rimraf -r ./cypress/screenshots/* && rimraf -r ./cypress/videos/* && yarn run convertCSVtoJSON",
     "//test" : "echo 'It will run cypress and record the results to the Dashboard'",
     "test": "cypress run --record --key 362e78bd-3376-4c7d-98cf-348ccb13211a",
     "//posttest" : "echo 'It will be run after test and will merge the mochawesome reports and generate an HTML'",
-    "posttest": "yarn run merge-reports && yarn run generate-htmlreport",
+    "posttest": "yarn run //posttest && yarn run merge-reports && yarn run generate-htmlreport",
     "//merge-reports" : "echo 'It will merge mochawesome reports'", 
     "merge-reports": "mochawesome-merge ./cypress/reports/*.json > ./cypress/reports/report1.json",
     "//generate-htmlreport" : "echo 'It will generate an HTML report'", 

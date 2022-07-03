@@ -61,13 +61,9 @@ testData.forEach((testDataRow: any) => {
 
   When(`I pick {string} property type {string} max price {string} city {string} and click on the button search`, () => {
     fonciaHomepage.clickacceptcookiesbutton();
-    fonciaHomepage.clickprojectbutton();
-    fonciaHomepage.pickproject(`${data.project}`);
-    fonciaHomepage.clicktypebutton();
-    fonciaHomepage.picktype(`${data.type}`);
-    fonciaHomepage.enterprice(`${data.price}`);
-    fonciaHomepage.entercity(`${data.city}`);
-    fonciaHomepage.clicksearchbutton();
+    
+    // This is a custom command that has been added to Cypress to perform a search
+    cy.search(`${data.project}`,`${data.type}`,`${data.price}`,`${data.city}`);
   });
 
   Then("I should see the results of properties related to my searched criterias", () => {

@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import { fonciaHomepage } from "./pages/fonciahomepage.page"
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -35,3 +38,13 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('search', (project, type, price, city) => { 
+    fonciaHomepage.clickprojectbutton();
+    fonciaHomepage.pickproject(project);
+    fonciaHomepage.clicktypebutton();
+    fonciaHomepage.picktype(type);
+    fonciaHomepage.enterprice(price);
+    fonciaHomepage.entercity(city);
+    fonciaHomepage.clicksearchbutton();
+ })
