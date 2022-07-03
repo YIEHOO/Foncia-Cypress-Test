@@ -39,9 +39,9 @@ pipeline {
         
         stage('Testing') {
             steps {
-                bat "npm i -g corepack"
-                bat "yarn install"
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC} --env=${ENV}"
+                bash "npm i -g corepack"
+                bash "yarn install"
+                bash "npx cypress run --browser ${BROWSER} --spec ${SPEC} --env=${ENV}"
             }
         }
         
