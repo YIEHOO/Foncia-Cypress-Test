@@ -21,7 +21,7 @@ pipeline {
     parameters {
         string(name: 'SPEC', defaultValue: 'cypress/e2e/**', description: 'Ej: cypress/e2e/*.feature')
         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
-        choice(name: 'ENV', choices: ['production', 'string', 'preprod'], description: 'Pick the environment you want to use to run your scripts')
+        choice(name: 'ENV', choices: ['production', 'staging', 'preprod'], description: 'Pick the environment you want to use to run your scripts')
     }
     
     options {
