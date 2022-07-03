@@ -69,6 +69,10 @@ To convert CSV file to JSON file
 yarn convertCSVtoJSON
 ```
 
+## Cypress Dashboard
+
+To access Cypress Dashboard please click on [me](https://dashboard.cypress.io/projects/6jwnmi/runs/109/overview) to see the details
+
 ## License
 
 MIT
