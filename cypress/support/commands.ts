@@ -47,4 +47,4 @@ Cypress.Commands.add('search', (project, type, price, city) => {
     fonciaHomepage.enterprice(price);
     fonciaHomepage.entercity(city);
     fonciaHomepage.clicksearchbutton();
- })
+})
