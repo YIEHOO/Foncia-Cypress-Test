@@ -39,12 +39,10 @@ pipeline {
         }
         
         stage('Testing') {
-            String input = ${ENV}
-            String escaped = "'" + input.replaceAll(/'/, /'"'"'/) + "'"
             steps {
                 sh "npm i -g corepack"
                 sh "yarn install"
-                sh "yarn test --browser ${BROWSER} --spec ${SPEC} --env=${escaped}"
+                sh "yarn test --browser ${BROWSER} --spec ${SPEC} --env=${ENV}"
             }
         }
         
