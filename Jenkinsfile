@@ -42,7 +42,7 @@ pipeline {
             steps {
                 sh "npm i -g corepack"
                 sh "yarn install"
-                sh "yarn test --browser ${BROWSER} --spec ${SPEC} --env=\\'${ENV}'\\"
+                sh "yarn test --browser ${BROWSER} --spec ${SPEC} --env=\\'${ENV}\\'"
             }
         }
         
