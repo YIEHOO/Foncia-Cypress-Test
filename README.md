@@ -40,7 +40,7 @@ corepack enable
 Install the dependencies and devDependencies.
 
 ```sh
-cd FONCIA-CYPRESS_TEST
+cd FONCIA-CYPRESS-TEST
 yarn install
 ```
 
@@ -77,7 +77,7 @@ yarn convertCSVtoJSON
 Create an image of the Cypress project
 
 ```sh
-cd FONCIA-CYPRESS_TEST
+cd FONCIA-CYPRESS-TEST
 docker build -t my-cypress-image:1.0.0 .
 ```
 
