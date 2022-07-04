@@ -100,7 +100,7 @@ The Foncia Cypress Test provides a Jenkinsfile that will help setup up a Jenkins
 3. Specify 'Pipeline Script from SCM', 'Git', Repository URL, Credentials, Branch
 4. Set 'Script Path' to 'Jenkinsfile'
 
-![My Image](my-image.jpg)
+![JenkinsPipelineConfig](JenkinsPipelineConfig.jpg)
 
 #### Plugins requiered
 
