@@ -60,7 +60,7 @@ pipeline {
                 BUILD_USER = getBuildUser()
             }
             
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports', reportFiles: 'report1.html', reportName: 'HTML Report', reportTitles: ''])
             deleteDir()
         }
     }
