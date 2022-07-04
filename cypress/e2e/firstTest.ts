@@ -39,8 +39,6 @@ testData.forEach((testDataRow: any) => {
   });
 
   Then("I should see the results of my seached keyword with {string} at the top of the list", (link) => {
-    // This double check is made for some countries in UE where Google shows the cookies policy again on the search results
-    googleHomepage.checkcookiespopup();
     googleResults.firstelement
       .should("contain", link);
   });
