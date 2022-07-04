@@ -20,10 +20,12 @@ class GoogleHomepagePage {
                 if ($body.find(googleHomepageIds.cookiesacceptbutton).length) {
                     return googleHomepageIds.cookiesacceptbutton;
                 }
-                return googleHomepageIds.searchfield;
+                return googleHomepageIds.pagebody;
             })
             .then(selector => {
-            cy.get(selector).click();
+                if (selector == googleHomepageIds.cookiesacceptbutton) {
+                    cy.get(selector).click();
+                }
         });
     }
 

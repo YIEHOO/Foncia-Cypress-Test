@@ -25,13 +25,13 @@ testData.forEach((testDataRow: any) => {
   });
 
   Then("I should see a search bar and a search button", () => {
+    // This check is made specificly for countries in UE where Google shows the cookies policy (In Morocco it is not shown)
     googleHomepage.checkcookiespopup();
     googleHomepage.searchbar
       .should('be.visible')
       .should('have.class','gLFyf gsfi');
     googleHomepage.searchbutton
       .should('be.visible')
-      .should('have.value','Recherche Google');
   });
 
   When("I search for {string}", (keyword) => {
@@ -39,6 +39,8 @@ testData.forEach((testDataRow: any) => {
   });
 
   Then("I should see the results of my seached keyword with {string} at the top of the list", (link) => {
+    // This double check is made for some countries in UE where Google shows the cookies policy again on the search results
+    googleHomepage.checkcookiespopup();
     googleResults.firstelement
       .should("contain", link);
   });
