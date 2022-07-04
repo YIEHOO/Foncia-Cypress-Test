@@ -1,5 +1,5 @@
 # Foncia Cypress Test
-## _Functional automation testing solution using Cypress for Foncia service_
+## _Functional autimation test solution using Cypress for Foncia service_
 
 [![Foncia Cypress Test](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/6jwnmi/main&style=for-the-badge&logo=cypress)](https://dashboard.cypress.io/projects/6jwnmi/runs)
 
@@ -12,6 +12,7 @@
 - A custom reporter for use with the Javascript testing framework
 - DDT (Data Driven Testing) a software testing method in which test data is stored in table or spreadsheet format
 - Package manager for code
+- CI/CD  frequently deliver apps to customers by introducing automation into the stages of app development
 
 ## Tech
 
@@ -26,7 +27,7 @@ Foncia Cypress Test uses a number of open source projects to work properly:
 - [YARN] - A package manager for code
 - [papaparse] - The powerful, in-browser CSV parser for big boys and girls
 
-## Installation
+## Install and run tests locally
 
 Foncia Cypress Test requires [Node.js](https://nodejs.org/) v16.10+ to run.
 
@@ -45,13 +46,13 @@ yarn install
 
 #### Run the tests
 
-To run the test on production on a headless mode :
+To run the test on production :
 
 ```sh
 yarn test --env ENV='production'
 ```
 
-#### Additional commands not needed to be run but might be helpful
+#### Additional commands not needed to be run but might be help
 
 To merge mochawesome reports
 ```sh
@@ -69,9 +70,47 @@ To convert CSV file to JSON file
 yarn convertCSVtoJSON
 ```
 
+## Install and run tests using Docker
+
+[Docker](https://docker.com) must be installed on the targetted machine to be able to build an image
+
+Create an image of the Cypress project
+
+```sh
+cd FONCIA-CYPRESS_TEST
+docker build -t my-cypress-image:1.0.0 .
+```
+
+#### Run the tests
+
+To run the test on production :
+
+```sh
+docker run -i -v $PWD:/my-cypress-project -t my-cypress-image:1.0.0 --spec cypress/e2e/*.feature --env ENV='production'
+```
+
+## CI/CD Integration
+
+The Foncia Cypress Test provides a Jenkinsfile that will help setup up a Jenkins Pipeline with the least effort possible.
+
+#### How to do it?
+
+1. Create a new Pipeline on Jenkins
+2. Go to 'Advanced Project Options'
+3. Specify 'Pipeline Script from SCM', 'Git', Repository URL, Credentials, Branch
+4. Set 'Script Path' to 'Jenkinsfile'
+
+#### Plugins requiered
+
+```sh
+AnsiColor
+HTML Publisher Plugin
+NodeJS Plugin
+```
+
 ## Cypress Dashboard
 
-To access Cypress Dashboard please click [me](https://dashboard.cypress.io/projects/6jwnmi/runs/109/overview) to see the details
+To access Cypress Dashboard please click on [me](https://dashboard.cypress.io/projects/6jwnmi/runs/109/overview) to see the details
 
 ## License
 
